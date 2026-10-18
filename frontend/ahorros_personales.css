@@ -1,24 +1,17 @@
-/*------------------------------------*/
-/*--|configuracion_general|-----------*/
-/*------------------------------------*/
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
     background: #eef4f1;
     color: #26352d;
     min-height: 100vh;
 }
-
-/*------------------------------------*/
-/*--|encabezado|----------------------*/
-/*------------------------------------*/
-
+/*-------------------------------*/
+/*--|estilo_ahorros_personales|--*/
+/*-------------------------------*/
 .encabezado {
     background: #173b2c;
     color: white;
@@ -27,10 +20,10 @@ body {
     align-items: center;
     gap: 20px;
 }
-
 .icono_encabezado {
     width: 70px;
     height: 70px;
+    flex-shrink: 0;
     background: #d6a84f;
     color: #173b2c;
     border-radius: 18px;
@@ -39,37 +32,25 @@ body {
     justify-content: center;
     font-size: 32px;
 }
-
 .etiqueta {
     color: #d6a84f;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 2px;
 }
-
 .encabezado h1 {
     margin: 5px 0;
     font-size: 32px;
 }
-
 .encabezado p {
     color: #c9d7d0;
+    line-height: 1.5;
 }
-
-/*------------------------------------*/
-/*--|contenedor|----------------------*/
-/*------------------------------------*/
-
 .contenedor {
     width: 90%;
     max-width: 900px;
     margin: 40px auto;
 }
-
-/*------------------------------------*/
-/*--|presentacion|--------------------*/
-/*------------------------------------*/
-
 .presentacion {
     background: white;
     padding: 25px;
@@ -83,6 +64,7 @@ body {
 .icono_presentacion {
     width: 55px;
     height: 55px;
+    flex-shrink: 0;
     background: #e4f1eb;
     color: #287a58;
     border-radius: 14px;
@@ -96,10 +78,11 @@ body {
 }
 .presentacion p {
     color: #68776f;
+    line-height: 1.5;
 }
-/*------------------------------------*/
-/*--|panel_calculadora|---------------*/
-/*------------------------------------*/
+/*------------------------------*/
+/*--|estilo_panel_calculadora|--*/
+/*------------------------------*/
 .panel_calculadora {
     background: white;
     padding: 35px;
@@ -118,9 +101,6 @@ body {
     color: #287a58;
     font-size: 20px;
 }
-/*------------------------------------*/
-/*--|campos|--------------------------*/
-/*------------------------------------*/
 .campo {
     margin-bottom: 20px;
 }
@@ -140,15 +120,17 @@ body {
     border-radius: 10px;
     font-size: 16px;
     outline: none;
+    background: white;
+    color: #26352d;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .campo input:focus {
     border-color: #287a58;
+    box-shadow: 0 0 0 3px rgba(40, 122, 88, 0.12);
 }
-/*------------------------------------*/
-/*--|botones|-------------------------*/
-/*------------------------------------*/
 .botones {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 25px;
 }
@@ -158,35 +140,48 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 14px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 .calcular {
     background: #287a58;
     color: white;
 }
+.calcular:hover {
+    background: #206448;
+}
 .limpiar {
     background: #e6ebe8;
     color: #304038;
 }
+.limpiar:hover {
+    background: #d7e0db;
+}
 .boton:hover {
     transform: translateY(-2px);
 }
-/*------------------------------------*/
-/*--|mensaje|-------------------------*/
-/*------------------------------------*/
+.boton:focus-visible {
+    outline: 3px solid #d6a84f;
+    outline-offset: 3px;
+}
+.boton:active {
+    transform: translateY(0);
+}
 .mensaje {
     text-align: center;
     min-height: 20px;
     margin-top: 15px;
     color: #287a58;
     font-weight: bold;
+    line-height: 1.5;
 }
-/*------------------------------------*/
-/*--|resultado|-----------------------*/
-/*------------------------------------*/
+/*-----------------------*/
+/*--|estilo_resultados|--*/
+/*-----------------------*/
 .resultado {
     background: #173b2c;
     color: white;
@@ -200,24 +195,27 @@ body {
     gap: 10px;
     margin-bottom: 25px;
 }
+.titulo_resultado h2 {
+    font-size: 22px;
+}
 .titulo_resultado i {
     color: #d6a84f;
+    font-size: 20px;
 }
-/*------------------------------------*/
-/*--|resumen|-------------------------*/
-/*------------------------------------*/
 .resumen {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
 }
 .dato {
+    min-width: 0;
     background: #234c3a;
     padding: 20px;
     border-radius: 14px;
     text-align: center;
 }
 .dato i {
+    display: block;
     color: #d6a84f;
     font-size: 22px;
     margin-bottom: 10px;
@@ -229,17 +227,20 @@ body {
     margin-bottom: 8px;
 }
 .dato strong {
+    display: block;
     font-size: 20px;
+    overflow-wrap: anywhere;
 }
-/*------------------------------------*/
-/*--|barra_de_progreso|--------------*/
-/*------------------------------------*/
+/*------------------------------*/
+/*--|estilo_barra_de_progreso|--*/
+/*------------------------------*/
 .progreso_contenedor {
     margin-top: 30px;
 }
 .progreso_texto {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     margin-bottom: 8px;
 }
 .barra {
@@ -255,18 +256,13 @@ body {
     border-radius: 20px;
     transition: width 0.4s ease;
 }
-/*------------------------------------*/
-/*--|texto_resultado|-----------------*/
-/*------------------------------------*/
 .resultado_texto {
     text-align: center;
     color: #c6d6ce;
     margin-top: 25px;
     line-height: 1.6;
+    overflow-wrap: anywhere;
 }
-/*------------------------------------*/
-/*--|acciones|------------------------*/
-/*------------------------------------*/
 .acciones {
     text-align: center;
     margin-top: 25px;
@@ -274,4 +270,7 @@ body {
 .restablecer {
     background: #dfe5e2;
     color: #26352d;
+}
+.restablecer:hover {
+    background: #cfd9d4;
 }

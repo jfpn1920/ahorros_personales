@@ -22,88 +22,68 @@
             <p>Calcula cuánto necesitas ahorrar para alcanzar tu meta.</p>
         </div>
     </header>
-    <!-- Contenido principal -->
+    <!------------------------------------------>
+    <!--|estructuracion_calculadora_de_ahorro|-->
+    <!------------------------------------------>
     <main class="contenedor">
-        <!-- Presentación -->
         <section class="presentacion">
             <div class="icono_presentacion">
                 <i class="fa-solid fa-coins"></i>
             </div>
             <div>
                 <h2>Calculadora de ahorro</h2>
-                <p>
-                    Ingresa tus datos y descubre cuánto tiempo
-                    necesitas para alcanzar tu objetivo.
-                </p>
+                <p>Ingresa tus datos y descubre cuánto tiempo necesitas para alcanzar tu objetivo.</p>
             </div>
         </section>
-        <!-- Formulario de ahorro -->
+        <!----------------------->
+        <!--|panel_calculadora|-->
+        <!----------------------->
         <section class="panel_calculadora">
-            <!-- Título del formulario -->
             <div class="titulo_panel">
                 <i class="fa-solid fa-calculator"></i>
                 <h2>Datos de ahorro</h2>
             </div>
-            <!-- Campo de meta -->
             <div class="campo">
                 <label for="meta">
                     <i class="fa-solid fa-bullseye"></i>
                     Meta de ahorro
                 </label>
-                <input
-                    type="number"
-                    id="meta"
-                    placeholder="Ejemplo: 1000000"
-                    min="0"
-                >
+                <input type="number" id="meta" placeholder="Ejemplo: 1000000" min="0">
             </div>
-            <!-- Campo de ahorro actual -->
             <div class="campo">
                 <label for="ahorroActual">
                     <i class="fa-solid fa-wallet"></i>
                     Ahorro actual
                 </label>
-                <input
-                    type="number"
-                    id="ahorroActual"
-                    placeholder="Ejemplo: 200000"
-                    min="0"
-                >
+                <input type="number" id="ahorroActual" placeholder="Ejemplo: 200000" min="0">
             </div>
-            <!-- Campo de ahorro mensual -->
             <div class="campo">
                 <label for="ahorroMensual">
                     <i class="fa-solid fa-calendar-days"></i>
                     Ahorro mensual
                 </label>
-                <input
-                    type="number"
-                    id="ahorroMensual"
-                    placeholder="Ejemplo: 100000"
-                    min="0"
-                >
+                <input type="number" id="ahorroMensual" placeholder="Ejemplo: 100000" min="0">
             </div>
-            <!-- Botones -->
             <div class="botones">
-                <button id="calcular" class="boton calcular">
+                <button type="button" id="calcular" class="boton calcular">
                     <i class="fa-solid fa-calculator"></i>
                     Calcular ahorro
                 </button>
-                <button id="limpiar" class="boton limpiar">
+                <button type="button" id="limpiar" class="boton limpiar">
                     <i class="fa-solid fa-eraser"></i>
                     Limpiar
                 </button>
             </div>
-            <!-- Mensaje -->
-            <p id="mensaje" class="mensaje"></p>
+            <p id="mensaje" class="mensaje" aria-live="polite"></p>
         </section>
-        <!-- Resultado -->
+        <!---------------------->
+        <!--|resultado_ahorro|-->
+        <!---------------------->
         <section class="resultado">
             <div class="titulo_resultado">
                 <i class="fa-solid fa-chart-line"></i>
                 <h2>Resultado de tu ahorro</h2>
             </div>
-            <!-- Resumen de resultados -->
             <div class="resumen">
                 <div class="dato">
                     <i class="fa-solid fa-money-bill-wave"></i>
@@ -121,7 +101,6 @@
                     <strong id="metaResultado">$0</strong>
                 </div>
             </div>
-            <!-- Barra de progreso -->
             <div class="progreso_contenedor">
                 <div class="progreso_texto">
                     <span>Progreso actual</span>
@@ -131,14 +110,13 @@
                     <div id="progreso" class="progreso"></div>
                 </div>
             </div>
-            <!-- Descripción del resultado -->
-            <p id="resultadoTexto" class="resultado_texto">
-                Ingresa tus datos para comenzar.
-            </p>
+            <p id="resultadoTexto" class="resultado_texto" aria-live="polite">Ingresa tus datos para comenzar.</p>
         </section>
-        <!-- Acciones finales -->
+        <!---------------------->
+        <!--|acciones_finales|-->
+        <!---------------------->
         <section class="acciones">
-            <button id="restablecer" class="boton restablecer">
+            <button type="button" id="restablecer" class="boton restablecer">
                 <i class="fa-solid fa-rotate-left"></i>
                 Restablecer todo
             </button>
